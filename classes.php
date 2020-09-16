@@ -13,11 +13,19 @@ Class Person
         $this->surname = $surname;
     }
 
-    public function export()
+    public function getName(): string
     {
-        $this->name();
-        $this->middlename();
-        $this->surname();
+        return $this->name();
+    }
+
+    public function getMiddlename(): string
+    {
+        return $this->middlename();
+    }
+
+    public function getSurname(): string
+    {
+        return $this->surname();
     }
 }
 
