@@ -3,10 +3,10 @@
 Class Person
 {
     protected string $name;
-    protected string $middlename;
+    protected ?string $middlename;
     protected string $surname;
 
-    public function __construct(string $name, string $middlename, string $surname)
+    public function __construct(string $name, string $surname, string $middlename = null)
     {
         $this->name = $name;
         $this->middlename = $middlename;
@@ -18,17 +18,19 @@ Class Person
         return $this->name();
     }
 
-    public function getMiddlename(): string
+    public function getMiddlename(): ?string
     {
         return $this->middlename();
     }
 
-    public function getSurname(): string
+    public function getSurname(): ?string
     {
         return $this->surname();
     }
 }
 
-$person = new Person('Pēteris', 'Māris', 'Andersons');
-var_dump($person);
+$peteris = new Person('Pēteris', 'Māris', 'Andersons');
+$andris = new Person('Andris', 'Aleksejs');
+
+var_dump($peteris, $andris);
 ?>
