@@ -10,10 +10,7 @@ class Cars
     {
         $this->fuelAmount = $fuelAmount;
         $this->carName = $carName;
-
-
     }
-
     public function carName(): string
     {
         return $this->carName;
@@ -27,42 +24,39 @@ class Cars
 
 class Audi extends Cars
 {
-    private string $model;
-
-    public function __construct(string $carName, int $fuelAmount, string $model)
+    public function  audiFeature(): string
     {
-        parent::__construct($carName, $fuelAmount);
-
-        $this->model = $model;
-    }
-
-    public function fuelAmount(): int
-    {
-        $fuelAmount = parent::fuelAmount();
-
-        return $fuelAmount;
+        return 'Armor';
     }
 }
 
 class Bmw extends Cars
 {
-    private string $model;
-
-    public function __construct(string $carName, int $fuelAmount, string $model)
+    public function  BmwFeature(): string
     {
-        parent::__construct($carName, $fuelAmount);
-
-        $this->model = $model;
+        return 'Unbreakable';
     }
 }
 
 $cars = [
-    new Audi ('AUDI', 70, 'AUDI A6 B8'),
-    new Bmw ('BMW', 65, 'BMW X5 E53'),
+    new Audi ('AUDI', 70),
+    new Bmw ('BMW', 65),
 ];
 foreach ($cars as $car)
 {
     echo 'Car name: ' . $car->carName() . ' - Fuel Tank Amount: ' . $car->fuelAmount() . ' Litres' . PHP_EOL;
+
+    if ($car instanceof  Audi)
+    {
+        echo $car->audiFeature();
+    }
+
+    if ($car instanceof  Bmw)
+    {
+        echo $car->bmwFeature();
+    }
+
+    echo PHP_EOL;
 }
 
 
