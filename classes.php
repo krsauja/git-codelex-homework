@@ -9,8 +9,8 @@ Class Person
     public function __construct(string $name, string $middlename, string $surname)
     {
         $this->name = $name;
-        $this->surname = $surname;
         $this->middlename = $middlename;
+        $this->surname = $surname;
     }
 
     public function export()
