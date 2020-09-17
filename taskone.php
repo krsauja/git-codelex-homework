@@ -115,3 +115,6 @@ if ($pin == $selectCar->getPin()) {
     sleep((int) 1);
     }
 }
+
+?>
+
