@@ -17,8 +17,7 @@ class Player
 
     private function drawTrack(): string
     {
-        return $track1 = array_filter(explode('X', str_repeat('-X', $tracklength)));
-        return $track2 = array_filter(explode('0', str_repeat('-0', $tracklength)));
+
     }
 }
 
