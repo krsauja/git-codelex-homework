@@ -55,7 +55,7 @@ class Cars {
         return $this->odometer;
     }
 
-    public function increaseOdometer(int $distance) : int
+    public function increaseOdometer(int $distance): int
     {
         return $this->odometer += $distance;
     }
@@ -71,8 +71,7 @@ $bmw = new Cars('BMW X5', 'LV-3333', 80, 0, 1313);
 $volvo = new Cars('SCANIA', 'GG-1317', 290, 0, 9999);
 
 echo "Cars available: \n";
-$carList =
-    [
+$carList = [
     $audi,
     $bmw,
     $volvo

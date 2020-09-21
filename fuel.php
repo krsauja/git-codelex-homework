@@ -1,6 +1,7 @@
 <?php declare(strict_types=1);
 
-class Cars {
+class Cars
+{
 
     private string $carModel;
     private string $numberPlate;
@@ -55,7 +56,7 @@ class Cars {
         return $this->odometer;
     }
 
-    public function increaseOdometer(int $distance) : int
+    public function increaseOdometer(int $distance): int
     {
         return $this->odometer += $distance;
     }
@@ -82,16 +83,16 @@ foreach ($carList as $car) {
 }
 
 echo "\n";
-$input = (int) readline ('Choose car(0-2): ');
+$input = (int)readline('Choose car(0-2): ');
 $selectCar = $carList[$input];
 
 if ($input !== 0 && $input !== 1 && $input !== 2) {
     echo "Wrong number, try again\n";
-    $input = (int) readline('> ');
+    $input = (int)readline('> ');
     $selectCar = $carList[$input];
 }
 
-$pin = (int) readline ('Enter PASSWORD for ' . $selectCar->getCarModel() . ': ');
+$pin = (int)readline('Enter PASSWORD for ' . $selectCar->getCarModel() . ': ');
 $attempts = 3;
 
 while ($pin !== $selectCar->getPin() && $attempts >= 0) {
@@ -106,13 +107,12 @@ while ($pin !== $selectCar->getPin() && $attempts >= 0) {
 }
 
 if ($pin == $selectCar->getPin()) {
-    while ($selectCar->getFuelAmount() > 0)
-    {
+    while ($selectCar->getFuelAmount() > 0) {
         $selectCar->increaseOdometer(100);
         $selectCar->burntFuel();
 
-        echo 'Car Model: [' . $selectCar->getCarModel() . '] Mileage driven: [' . $selectCar->getOdometer() . '] - Fuel left: [' . $selectCar->getFuelAmount() .  'L]' . PHP_EOL;
-        sleep((int) 1);
+        echo 'Car Model: [' . $selectCar->getCarModel() . '] Mileage driven: [' . $selectCar->getOdometer() . '] - Fuel left: [' . $selectCar->getFuelAmount() . 'L]' . PHP_EOL;
+        sleep((int)1);
     }
 }
 

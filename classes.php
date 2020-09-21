@@ -23,7 +23,7 @@ Class Person
         return $this->middlename();
     }
 
-    public function getSurname(): ?string
+    public function getSurname(): string
     {
         return $this->surname();
     }
@@ -31,6 +31,10 @@ Class Person
 
 $peteris = new Person('Pēteris', 'Māris', 'Andersons');
 $andris = new Person('Andris', 'Aleksejs');
+$marta = new Person('Marta', 'Rozite', 'Gauja');
 
-var_dump($peteris, $andris);
+
+echo $peteris->getName() . " " . $peteris->getMiddlename() . " " . $peteris->getSurname() . PHP_EOL;
+echo $andris->getName() . " " . $andris->getMiddlename() . " " . $andris->getSurname() . PHP_EOL;
+echo $marta->getName() . " " . $marta->getMiddlename() . " " . $marta->getSurname() . PHP_EOL;
 ?>
